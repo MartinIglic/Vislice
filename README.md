@@ -7,3 +7,6 @@ Matematiki:
 Josip Plemelj
 Jurij Vega
 Ivan Vidav
+
+predsednik vlade:
+janez janša

@@ -2,15 +2,4 @@
 Tukaj bomo delali vaje pri UVP. (2020)
 
 
-Matematiki:
-
-Josip Plemelj
-Jurij Vega
-Ivan Vidav
-
-
-predsednik države:
-
-Borut Pahor
-predsednik vlade:
-janez janša
+Naredili bom program, ki nas vodi skozi preprosto igro.

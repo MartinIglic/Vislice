@@ -1,5 +1,6 @@
 import random
 
+ZACETEK = 'Z'
 
 STEVILO_DOVOLJENIH_NAPAK = 10
 PRAVILNA_CRKA = '+'
@@ -10,7 +11,7 @@ PORAZ = 'X'
 
 bazen_besed =[]
 
-with open('vislive/besede.txt') as datoteka_bazena:
+with open('vislice/besede.txt') as datoteka_bazena:
     for beseda in datoteka_bazena:
         bazen_besed.append(beseda.strip().lower())
 class igra:
@@ -102,7 +103,42 @@ class igra:
 
 
 
+class Vislice:
+    '''
+    skrbi za trenutno stanje več iger (imel bo več objektov tipa iger)
+    '''
+    def __init__(self,):
+        # slovar, ki ID-ju  pririredi objekt njegove igre
+        self.igre = {}   #    int -> (Igra, stanje)
+        
+    def prosti_od_igre(self):
+        '''Vrne nek ID, ki ga ne uporablja nobena igra'''
+        if len(self.igre) == 0:
+            return 0
+        else:
+            return max(self.igre.keys()) + 1
+            
+    def nova_igra(self):
 
-    
+        # dobimo svež ID
+        nov_id = self.prosti_id_igre()
+        # naredimo navo igro 
+        sveza_igra = nova_igra()
+        # vse to shranimo v self.igre
+        self.igre[nov_id] = (sveza_igra, ZACETEK)
+
+        # Vrnemo nov ID
+        return nov_id
+        pass
+        
+    def ugibaj(self, id_igre, crka):
+        # Dobimo staro igro ven
+        trenutna_igra, _ = self.igra(id_igre)
+
+        #ugibamo crko, dobimo novostanje
+        novo_stanje = trenutna_igra.ugibaj(crka)
+
+        #zapišemo posodobljeno stanje in igro nazaj
+        self.igre([id_igre])
 
 
